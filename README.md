@@ -8,21 +8,21 @@ Simple project only to test Spring Boot and [Localstack](https://localstack.clou
 
 ## Start localstack running AWS Secrets Manager only
 ```
-    ~ SERVICES=secretsmanager localstack start
+~ SERVICES=secretsmanager localstack start
 ```
 
 ## Manage secrets with AWS CLI
 ```
-    ~ aws --endpoint http://localhost:4566 secretsmanager create-secret \
-            --name <secretName> \
-            --secret-string <secret-string-value> \
+~ aws --endpoint http://localhost:4566 secretsmanager create-secret \
+        --name <secretName> \
+        --secret-string <secret-string-value> \
 ```
 ```
-    ~ aws --endpoint-url=http://localhost:4566 secretsmanager get-secret-value --secret-id <secretName>
+~ aws --endpoint-url=http://localhost:4566 secretsmanager get-secret-value --secret-id <secretName>
 ```
 
 ```
-    ~ aws --endpoint http://localhost:4566 secretsmanager delete-secret --secret-id <secretName>
+~ aws --endpoint http://localhost:4566 secretsmanager delete-secret --secret-id <secretName>
 ```
 ### More references:
 - [Localstack Docs](https://localstack.cloud/docs/)
