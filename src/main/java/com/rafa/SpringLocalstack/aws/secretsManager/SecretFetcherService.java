@@ -1,4 +1,4 @@
-package com.rafa.SpringLocalstack.aws;
+package com.rafa.SpringLocalstack.aws.secretsManager;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.secretsmanager.AWSSecretsManager;

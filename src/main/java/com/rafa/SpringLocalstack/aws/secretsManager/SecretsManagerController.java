@@ -1,4 +1,6 @@
-package com.rafa.SpringLocalstack.aws;
+package com.rafa.SpringLocalstack.aws.secretsManager;
+
+import com.rafa.SpringLocalstack.infra.dto.APIResponseDataDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,9 +14,9 @@ public class SecretsManagerController {
     private @Autowired SecretFetcherService secretFetcherService;
 
     @GetMapping("/secretsManager")
-    public ResponseEntity<ResponseData> fetch(@RequestParam String secretName) {
+    public ResponseEntity<APIResponseDataDTO> fetch(@RequestParam String secretName) {
         return new ResponseEntity<>(
-            ResponseData.builder().data(secretFetcherService.fetch(secretName)).build(),
+            APIResponseDataDTO.builder().data(secretFetcherService.fetch(secretName)).build(),
             HttpStatus.OK
         );
     }
